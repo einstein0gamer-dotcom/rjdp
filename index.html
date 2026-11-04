@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<title>RAJDEEP — Independent Artist</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#11110f}
+body{margin:0;background:#11110f;color:#e9e4d8;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+nav{position:absolute;top:0;width:100%;display:flex;justify-content:space-between;padding:25px 5%;font-size:11px;letter-spacing:2px;z-index:5}
+.navlinks{display:flex;gap:25px;color:#aaa397}
+.hero{min-height:100vh;display:flex;align-items:flex-end;padding:10vh 6vw;background:radial-gradient(ellipse at 75% 25%,#514038,#11110f 65%);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:60vw;height:60vw;border:1px solid #b9a18a30;border-radius:50%;right:8%;top:8%}
+.hero-content{position:relative;z-index:2}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#d77b50;margin-bottom:25px}
+h1{font:normal clamp(75px,15vw,200px)/.8 Georgia,serif;letter-spacing:-8px;margin:0 0 35px}
+h1 span{display:block;font-style:italic;color:#c6b9a5;margin-left:12vw}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:25px;max-width:700px}
+.hero-bottom p{font:25px Georgia,serif;line-height:1.3}
+.enter{border:1px solid #d8cfc0;padding:15px 20px;border-radius:50px;font-size:10px;letter-spacing:2px}
+section{padding:100px 6vw}
+.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid #ffffff25;padding-bottom:18px;margin-bottom:40px}
+.section-head h2{font:italic 42px Georgia,serif;margin:0}
+.section-head span{font-size:10px;letter-spacing:2px;color:#aaa397}
+.music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.release{cursor:pointer}
+.cover{aspect-ratio:1;background:#28241f;overflow:hidden;position:relative;display:grid;place-items:center}
+.cover img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(.5);transition:.5s}
+.release:hover img{transform:scale(1.06);filter:grayscale(0)}
+.covertext{position:relative;z-index:1;font:italic clamp(25px,5vw,65px) Georgia,serif;text-align:center;text-shadow:0 3px 25px #000}
+.play{position:absolute;bottom:15px;right:15px;border:1px solid #fff8;border-radius:50%;padding:12px}
+.release-meta{display:flex;justify-content:space-between;margin-top:15px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.release-meta small{color:#aaa397}
+.release p{font:italic 15px Georgia,serif;color:#aaa397}
+.about{background:#d8d0c2;color:#171512;display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center}
+.about .section-head{border-color:#17151235}
+.about h2{font:italic clamp(42px,7vw,90px)/.95 Georgia,serif;margin:0}
+.about-copy{font:19px/1.6 Georgia,serif;max-width:480px}
+.small{font:10px Arial,sans-serif;letter-spacing:3px;display:block;margin-top:35px}
+.contact-big{font:italic clamp(45px,10vw,130px)/.95 Georgia,serif;margin:30px 0 50px}
+.contact-big a{border-bottom:1px solid #777}
+footer{display:flex;justify-content:space-between;padding:25px 6vw 35px;border-top:1px solid #ffffff25;font-size:10px;letter-spacing:2px;color:#aaa397}
+.socials{display:flex;gap:20px}
+.modal{position:fixed;inset:0;background:#0b0b0bf2;z-index:30;display:none;align-items:center;justify-content:center;padding:25px}
+.modal.open{display:flex}
+.modal-card{width:min(850px,100%);display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;position:relative}
+.modal-art{aspect-ratio:1;background:linear-gradient(140deg,#a66d4d,#24201d);display:grid;place-items:center;font:italic 60px Georgia,serif;text-align:center}
+.modal-info h3{font:italic 54px Georgia,serif;margin:0}
+.modal-info p{color:#aaa397;line-height:1.6}
+.listen{display:inline-block;margin-top:20px;border:1px solid #aaa;padding:14px 20px;border-radius:30px;font-size:10px;letter-spacing:2px}
+.close{position:absolute;top:-35px;right:0;background:none;color:white;border:0;font-size:25px}
+@media(max-width:700px){
+ nav{padding:22px 5vw}.navlinks{gap:13px}
+ .hero{padding:8vh 6vw 13vh}
+ .hero-bottom{align-items:start;flex-direction:column}
+ section{padding:80px 6vw}
+ .music-grid{grid-template-columns:1fr 1fr;gap:25px 12px}
+ .release-meta{flex-direction:column;gap:5px}
+ .about{grid-template-columns:1fr;gap:35px}
+ .about-copy{font-size:17px}
+ .modal-card{grid-template-columns:1fr;gap:20px;max-width:420px}
+ .modal-art{max-height:40vh}
+ footer{gap:20px;flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<nav>
+<a href="#top">RAJDEEP®</a>
+<div class="navlinks"><a href="#music">Music</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+<span>Independent artist · Mumbai</span>
+</nav>
+
+<header class="hero" id="top">
+<div class="hero-content">
+<div class="kicker">Guitar / stories / everything in between</div>
+<h1>RAJDEEP<span>drip.</span></h1>
+<div class="hero-bottom">
+<p>Songs for the things<br>we never said.</p>
+<a class="enter" href="#music">Explore the music ↘</a>
+</div>
+</div>
+</header>
+
+<section id="music">
+<div class="section-head"><h2>Selected music</h2><span>01 — DISCOGRAPHY</span></div>
+<div class="music-grid">
+
+<article class="release" data-title="SAATH RE" data-desc="A song about the pull of someone you can't quite let go." data-link="#">
+<div class="cover">
+<img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=80">
+<div class="covertext">SAATH<br>RE</div><div class="play">↗</div>
+</div>
+<div class="release-meta"><span>Saath Re</span><small>Single · 2026</small></div>
+<p>Out now — listen & feel.</p>
+</article>
+
+<article class="release" data-title="CLOSE TO ME" data-desc="Bedroom-pop, late-night thoughts, and the almosts." data-link="#">
+<div class="cover">
+<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=900&q=80">
+<div class="covertext">CLOSE<br>TO ME</div><div class="play">↗</div>
+</div>
+<div class="release-meta"><span>Close to Me</span><small>Coming soon</small></div>
+<p>A little closer to the feeling.</p>
+</article>
+
+<article class="release" data-title="KOI AUR HAI" data-desc="Guitar-led melodies and the ache of a familiar face becoming a stranger." data-link="#">
+<div class="cover">
+<img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=80">
+<div class="covertext">KOI<br>AUR HAI</div><div class="play">↗</div>
+</div>
+<div class="release-meta"><span>Koi Aur Hai</span><small>In the works</small></div>
+<p>Somewhere between then and now.</p>
+</article>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<div><div class="section-head"><span>02 — THE PERSON</span></div><h2>Making music<br>out of <i>moments.</i></h2></div>
+<div class="about-copy">
+An independent artist from Mumbai. Guitar-driven melodies, stories that linger, and little pieces of life turned into songs.
+<br><br>This is a space for the music, the process, and everything around it.
+<span class="small">— Rajdeep Gaikwad</span>
+</div>
+</section>
+
+<section id="contact">
+<div class="section-head"><h2>Stay in the loop</h2><span>03 — SAY HELLO</span></div>
+<div class="contact-big">For music, collabs<br>or just <a href="mailto:hello@example.com">a hello ↗</a></div>
+</section>
+
+<footer>
+<span>© RAJDEEP 2026</span>
+<div class="socials"><a href="#">Spotify ↗</a><a href="#">YouTube ↗</a><a href="#">Instagram ↗</a></div>
+<span>Made somewhere in Mumbai</span>
+</footer>
+
+<div class="modal" id="releaseModal">
+<div class="modal-card">
+<button class="close">×</button>
+<div class="modal-art" id="modalArt">SAATH RE</div>
+<div class="modal-info">
+<div class="kicker">A RAJDEEP RELEASE</div>
+<h3 id="modalTitle">SAATH RE</h3>
+<p id="modalDesc"></p>
+<a class="listen" id="modalLink" href="#" target="_blank">Listen / Watch ↗</a>
+<p style="font-size:11px">Replace this link with your Spotify or YouTube URL.</p>
+</div>
+</div>
+</div>
+
+<script>
+const modal=document.getElementById('releaseModal');
+document.querySelectorAll('.release').forEach(card=>card.addEventListener('click',()=>{
+document.getElementById('modalTitle').textContent=card.dataset.title;
+document.getElementById('modalArt').textContent=card.dataset.title;
+document.getElementById('modalDesc').textContent=card.dataset.desc;
+document.getElementById('modalLink').href=card.dataset.link;
+modal.classList.add('open');
+}));
+function closeModal(){modal.classList.remove('open')}
+document.querySelector('.close').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
